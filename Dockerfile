@@ -1,9 +1,5 @@
-FROM node:12
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
-COPY package.json /usr/src/app/
-RUN npm install && npm cache clean -f
-COPY . /usr/src/app
-
-CMD [ "npm", "start" ]
+FROM node:lts as build
+COPY . .
+RUN npm install && npm run build
+FROM nginx:latest
+COPY --from=build ./build /usr/share/nginx/html
