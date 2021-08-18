@@ -36,7 +36,7 @@ pipeline {
                 script {
                     echo "Building sergeykudelin/frontend:${BUILD_NUMBER}"
                     AppImage = docker.build registry + '/frontend:latest'
-                    docker.withRegistry(registry_url, registry_creds) {
+                    docker.withRegistry('https://registry.hub.docker.com', registry_creds) {
                         AppImg.push ()
                     }
                 }
