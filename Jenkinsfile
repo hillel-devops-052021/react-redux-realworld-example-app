@@ -35,7 +35,7 @@ pipeline {
                 echo "Here we are building"
                 script {
                     echo "Building sergeykudelin/frontend:${BUILD_NUMBER}"
-                    AppImage = docker.build registry + '/frontend:$BRANCH_NUMBER'
+                    AppImage = docker.build registry + '/frontend:'$BUILD_NUMBER
                     docker.withRegistry(registry_url, registry_creds) {
                         AppImg.push ()
                     }
