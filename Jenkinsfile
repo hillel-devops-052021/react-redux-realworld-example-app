@@ -37,8 +37,6 @@ pipeline {
                     echo "Building sergeykudelin/frontend:${BUILD_NUMBER}"
                     AppImage = docker.build registry + '/frontend:latest'
                     docker.withRegistry('https://registry.hub.docker.com', registry_creds) {
-                        def a = load('a.groovy')
-                        app.push("${a.LOADED_BUILD_NUMBER}")
                         app.push("latest")
                     }
                 }
