@@ -57,9 +57,7 @@ pipeline {
         }
         stage("Deploy develop branch") {
             when {
-                when {
-                    branch 'develop'
-                }
+                branch 'develop'
             }
             steps {
                 echo "Here we are, deploying develop branch $BRANCH_NAME"
@@ -68,10 +66,8 @@ pipeline {
         }
         stage("Deploy master branch") {
             when {
-                when {
-                    branch 'master'
-                    buildingTag()
-                }
+                branch 'master'
+                buildingTag()
             }
             steps {
                 input('Deploy master to prod?')
