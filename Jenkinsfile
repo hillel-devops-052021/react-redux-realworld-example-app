@@ -7,7 +7,7 @@ void Deploy(env_type) {
         withCredentials (
             [
                 usernamePassword(
-                    сredentialsId: 'registry_creds',
+                    credentialsId: 'registry_creds',
                     usernameVariable: 'DR_USER',
                     passwordVariable: 'DR_PASS'
                 )
