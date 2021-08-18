@@ -14,7 +14,7 @@ void Deploy(env_type) {
             ]
         ) {
             sh 'docker login -u ${DR_USER} -p ${DR_PASS}'
-            sh 'docker service create --with-registry-auth --name frontend --network realworld -p 80:80 $registry/frontend:$BUILD_NUMBER'
+            sh 'docker service create --with-registry-auth --name frontend -p 80:80 $registry/frontend:$BUILD_NUMBER'
         }
     }
 }
