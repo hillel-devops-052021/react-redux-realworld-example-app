@@ -44,7 +44,7 @@ pipeline {
         }
         stage("Deploy regular branch") {
             when {
-                allof {
+                allOf {
                     not {branch 'master'}
                     not {branch 'develop'}
                     not {buildingTag()}
