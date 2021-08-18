@@ -21,7 +21,7 @@ void Deploy(env_type) {
 
 pipeline {
     environment {
-        registry = "hub.docker.com"
+        registry = "sergeykudelin"
         registry_url = "https://hub.docker.com"
         registry_creds = "registry_creds"
         dev_env = "dev.sergeykudelin.pp.ua:2375"
