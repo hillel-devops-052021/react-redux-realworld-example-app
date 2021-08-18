@@ -4,7 +4,7 @@ void Deploy(env_type) {
             "DOCKER_HOST=tcp://$env_type"
         ]
     ) {
-        with Credentials (
+        withCredentials (
             [
                 usernamePassword(
                     сredentialsId: registry_creds,
